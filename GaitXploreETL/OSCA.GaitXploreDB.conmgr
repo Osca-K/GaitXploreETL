@@ -1,0 +1,12 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="OSCA.GaitXploreDB"
+  DTS:DTSID="{33E0CCFB-DE0C-489D-A6CB-9D5FB91C4B26}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=OSCA;Initial Catalog=GaitXploreDB;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-GaitXploreETL-{33E0CCFB-DE0C-489D-A6CB-9D5FB91C4B26}OSCA.GaitXploreDB;Auto Translate=False;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
