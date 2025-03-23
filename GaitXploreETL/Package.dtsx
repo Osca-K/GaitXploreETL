@@ -11,8 +11,8 @@
   DTS:LocaleID="7177"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="5"
-  DTS:VersionGUID="{9F273465-6FFC-41F6-948E-FE6DF39F2B9B}">
+  DTS:VersionBuild="11"
+  DTS:VersionGUID="{C87C0A7F-D93F-4C7E-AE01-1B6F25F502D6}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -43,6 +43,23 @@
                   refId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input]"
                   description="Input to the Derived Column Transformation"
                   name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input].Columns[xAccel]"
+                      cachedDataType="r8"
+                      cachedName="xAccel"
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[xAccel]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input].Columns[yAccel]"
+                      cachedDataType="r8"
+                      cachedName="yAccel"
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[yAccel]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input].Columns[zAccel]"
+                      cachedDataType="r8"
+                      cachedName="zAccel"
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[zAccel]" />
+                  </inputColumns>
                   <externalMetadataColumns />
                 </input>
               </inputs>
@@ -74,6 +91,28 @@
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
                           name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[MagAccel]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[MagAccel]"
+                      name="MagAccel"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[SQRT]([SQUARE](#{Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[xAccel]}) + [SQUARE](#{Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[yAccel]}) + [SQUARE](#{Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[zAccel]}))</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">SQRT(SQUARE(xAccel) + SQUARE(yAccel) + SQUARE(zAccel))</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -458,11 +497,11 @@
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Task\OLE DB Destination"
+              refId="Package\Data Flow Task\Storing Raw Data to DB"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
-              name="OLE DB Destination"
+              name="Storing Raw Data to DB"
               usesDispositions="true"
               version="4">
               <properties>
@@ -515,7 +554,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
+                  refId="Package\Data Flow Task\Storing Raw Data to DB.Connections[OleDbConnection]"
                   connectionManagerID="{33E0CCFB-DE0C-489D-A6CB-9D5FB91C4B26}:external"
                   connectionManagerRefId="Project.ConnectionManagers[OSCA.GaitXploreDB]"
                   description="The OLE DB runtime connection used to access the database."
@@ -523,198 +562,208 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  refId="Package\Data Flow Task\Storing Raw Data to DB.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[id]"
+                      refId="Package\Data Flow Task\Storing Raw Data to DB.Inputs[OLE DB Destination Input].Columns[id]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="id"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id]"
+                      externalMetadataColumnId="Package\Data Flow Task\Storing Raw Data to DB.Inputs[OLE DB Destination Input].ExternalColumns[id]"
                       lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[id]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Pitch]"
+                      refId="Package\Data Flow Task\Storing Raw Data to DB.Inputs[OLE DB Destination Input].Columns[Pitch]"
                       cachedDataType="r8"
                       cachedName="Pitch"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Pitch]"
+                      externalMetadataColumnId="Package\Data Flow Task\Storing Raw Data to DB.Inputs[OLE DB Destination Input].ExternalColumns[Pitch]"
                       lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Pitch]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Roll]"
+                      refId="Package\Data Flow Task\Storing Raw Data to DB.Inputs[OLE DB Destination Input].Columns[Roll]"
                       cachedDataType="r8"
                       cachedName="Roll"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Roll]"
+                      externalMetadataColumnId="Package\Data Flow Task\Storing Raw Data to DB.Inputs[OLE DB Destination Input].ExternalColumns[Roll]"
                       lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Roll]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Sample No]"
+                      refId="Package\Data Flow Task\Storing Raw Data to DB.Inputs[OLE DB Destination Input].Columns[Sample No]"
                       cachedDataType="r8"
                       cachedName="Sample No"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Sample No]"
+                      externalMetadataColumnId="Package\Data Flow Task\Storing Raw Data to DB.Inputs[OLE DB Destination Input].ExternalColumns[Sample No]"
                       lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Sample No]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Yaw]"
+                      refId="Package\Data Flow Task\Storing Raw Data to DB.Inputs[OLE DB Destination Input].Columns[Yaw]"
                       cachedDataType="r8"
                       cachedName="Yaw"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Yaw]"
+                      externalMetadataColumnId="Package\Data Flow Task\Storing Raw Data to DB.Inputs[OLE DB Destination Input].ExternalColumns[Yaw]"
                       lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Yaw]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[distance]"
+                      refId="Package\Data Flow Task\Storing Raw Data to DB.Inputs[OLE DB Destination Input].Columns[distance]"
                       cachedDataType="r8"
                       cachedName="distance"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[distance]"
+                      externalMetadataColumnId="Package\Data Flow Task\Storing Raw Data to DB.Inputs[OLE DB Destination Input].ExternalColumns[distance]"
                       lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[distance]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[latitude]"
+                      refId="Package\Data Flow Task\Storing Raw Data to DB.Inputs[OLE DB Destination Input].Columns[latitude]"
                       cachedDataType="r8"
                       cachedName="latitude"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[latitude]"
+                      externalMetadataColumnId="Package\Data Flow Task\Storing Raw Data to DB.Inputs[OLE DB Destination Input].ExternalColumns[latitude]"
                       lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[latitude]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[longitude]"
+                      refId="Package\Data Flow Task\Storing Raw Data to DB.Inputs[OLE DB Destination Input].Columns[longitude]"
                       cachedDataType="r8"
                       cachedName="longitude"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[longitude]"
+                      externalMetadataColumnId="Package\Data Flow Task\Storing Raw Data to DB.Inputs[OLE DB Destination Input].ExternalColumns[longitude]"
                       lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[longitude]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[speed]"
+                      refId="Package\Data Flow Task\Storing Raw Data to DB.Inputs[OLE DB Destination Input].Columns[speed]"
                       cachedDataType="r8"
                       cachedName="speed"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[speed]"
+                      externalMetadataColumnId="Package\Data Flow Task\Storing Raw Data to DB.Inputs[OLE DB Destination Input].ExternalColumns[speed]"
                       lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[speed]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[xAccel]"
+                      refId="Package\Data Flow Task\Storing Raw Data to DB.Inputs[OLE DB Destination Input].Columns[xAccel]"
                       cachedDataType="r8"
                       cachedName="xAccel"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[xAccel]"
+                      externalMetadataColumnId="Package\Data Flow Task\Storing Raw Data to DB.Inputs[OLE DB Destination Input].ExternalColumns[xAccel]"
                       lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[xAccel]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[xAngVel]"
+                      refId="Package\Data Flow Task\Storing Raw Data to DB.Inputs[OLE DB Destination Input].Columns[xAngVel]"
                       cachedDataType="r8"
                       cachedName="xAngVel"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[xAngVel]"
+                      externalMetadataColumnId="Package\Data Flow Task\Storing Raw Data to DB.Inputs[OLE DB Destination Input].ExternalColumns[xAngVel]"
                       lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[xAngVel]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[yAccel]"
+                      refId="Package\Data Flow Task\Storing Raw Data to DB.Inputs[OLE DB Destination Input].Columns[yAccel]"
                       cachedDataType="r8"
                       cachedName="yAccel"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[yAccel]"
+                      externalMetadataColumnId="Package\Data Flow Task\Storing Raw Data to DB.Inputs[OLE DB Destination Input].ExternalColumns[yAccel]"
                       lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[yAccel]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[yAngVel]"
+                      refId="Package\Data Flow Task\Storing Raw Data to DB.Inputs[OLE DB Destination Input].Columns[yAngVel]"
                       cachedDataType="r8"
                       cachedName="yAngVel"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[yAngVel]"
+                      externalMetadataColumnId="Package\Data Flow Task\Storing Raw Data to DB.Inputs[OLE DB Destination Input].ExternalColumns[yAngVel]"
                       lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[yAngVel]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[zAccel]"
+                      refId="Package\Data Flow Task\Storing Raw Data to DB.Inputs[OLE DB Destination Input].Columns[zAccel]"
                       cachedDataType="r8"
                       cachedName="zAccel"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[zAccel]"
+                      externalMetadataColumnId="Package\Data Flow Task\Storing Raw Data to DB.Inputs[OLE DB Destination Input].ExternalColumns[zAccel]"
                       lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[zAccel]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[zAngVel]"
+                      refId="Package\Data Flow Task\Storing Raw Data to DB.Inputs[OLE DB Destination Input].Columns[zAngVel]"
                       cachedDataType="r8"
                       cachedName="zAngVel"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[zAngVel]"
+                      externalMetadataColumnId="Package\Data Flow Task\Storing Raw Data to DB.Inputs[OLE DB Destination Input].ExternalColumns[zAngVel]"
                       lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[zAngVel]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[loadDate]"
+                      refId="Package\Data Flow Task\Storing Raw Data to DB.Inputs[OLE DB Destination Input].Columns[loadDate]"
                       cachedDataType="dbTimeStamp"
                       cachedName="loadDate"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[loadDate]"
+                      externalMetadataColumnId="Package\Data Flow Task\Storing Raw Data to DB.Inputs[OLE DB Destination Input].ExternalColumns[loadDate]"
                       lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[loadDate]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Storing Raw Data to DB.Inputs[OLE DB Destination Input].Columns[MagAccel]"
+                      cachedDataType="r8"
+                      cachedName="MagAccel"
+                      externalMetadataColumnId="Package\Data Flow Task\Storing Raw Data to DB.Inputs[OLE DB Destination Input].ExternalColumns[MagAccel]"
+                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[MagAccel]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id]"
+                      refId="Package\Data Flow Task\Storing Raw Data to DB.Inputs[OLE DB Destination Input].ExternalColumns[id]"
                       dataType="wstr"
                       length="255"
                       name="id" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Pitch]"
+                      refId="Package\Data Flow Task\Storing Raw Data to DB.Inputs[OLE DB Destination Input].ExternalColumns[Pitch]"
                       dataType="r8"
                       name="Pitch" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Roll]"
+                      refId="Package\Data Flow Task\Storing Raw Data to DB.Inputs[OLE DB Destination Input].ExternalColumns[Roll]"
                       dataType="r8"
                       name="Roll" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Sample No]"
+                      refId="Package\Data Flow Task\Storing Raw Data to DB.Inputs[OLE DB Destination Input].ExternalColumns[Sample No]"
                       dataType="r8"
                       name="Sample No" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Yaw]"
+                      refId="Package\Data Flow Task\Storing Raw Data to DB.Inputs[OLE DB Destination Input].ExternalColumns[Yaw]"
                       dataType="r8"
                       name="Yaw" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[distance]"
+                      refId="Package\Data Flow Task\Storing Raw Data to DB.Inputs[OLE DB Destination Input].ExternalColumns[distance]"
                       dataType="r8"
                       name="distance" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[latitude]"
+                      refId="Package\Data Flow Task\Storing Raw Data to DB.Inputs[OLE DB Destination Input].ExternalColumns[latitude]"
                       dataType="r8"
                       name="latitude" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[longitude]"
+                      refId="Package\Data Flow Task\Storing Raw Data to DB.Inputs[OLE DB Destination Input].ExternalColumns[longitude]"
                       dataType="r8"
                       name="longitude" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[speed]"
+                      refId="Package\Data Flow Task\Storing Raw Data to DB.Inputs[OLE DB Destination Input].ExternalColumns[speed]"
                       dataType="r8"
                       name="speed" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[xAccel]"
+                      refId="Package\Data Flow Task\Storing Raw Data to DB.Inputs[OLE DB Destination Input].ExternalColumns[xAccel]"
                       dataType="r8"
                       name="xAccel" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[xAngVel]"
+                      refId="Package\Data Flow Task\Storing Raw Data to DB.Inputs[OLE DB Destination Input].ExternalColumns[xAngVel]"
                       dataType="r8"
                       name="xAngVel" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[yAccel]"
+                      refId="Package\Data Flow Task\Storing Raw Data to DB.Inputs[OLE DB Destination Input].ExternalColumns[yAccel]"
                       dataType="r8"
                       name="yAccel" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[yAngVel]"
+                      refId="Package\Data Flow Task\Storing Raw Data to DB.Inputs[OLE DB Destination Input].ExternalColumns[yAngVel]"
                       dataType="r8"
                       name="yAngVel" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[zAccel]"
+                      refId="Package\Data Flow Task\Storing Raw Data to DB.Inputs[OLE DB Destination Input].ExternalColumns[zAccel]"
                       dataType="r8"
                       name="zAccel" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[zAngVel]"
+                      refId="Package\Data Flow Task\Storing Raw Data to DB.Inputs[OLE DB Destination Input].ExternalColumns[zAngVel]"
                       dataType="r8"
                       name="zAngVel" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[loadDate]"
+                      refId="Package\Data Flow Task\Storing Raw Data to DB.Inputs[OLE DB Destination Input].ExternalColumns[loadDate]"
                       dataType="dbTimeStamp"
                       name="loadDate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Storing Raw Data to DB.Inputs[OLE DB Destination Input].ExternalColumns[MagAccel]"
+                      dataType="r8"
+                      name="MagAccel" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\Data Flow Task\Storing Raw Data to DB.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\Data Flow Task\Storing Raw Data to DB.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\Data Flow Task\Storing Raw Data to DB.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Data Flow Task\Storing Raw Data to DB.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\Data Flow Task\Storing Raw Data to DB.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Data Flow Task\Storing Raw Data to DB.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -726,7 +775,7 @@
           <paths>
             <path
               refId="Package\Data Flow Task.Paths[Derived Column Output]"
-              endId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              endId="Package\Data Flow Task\Storing Raw Data to DB.Inputs[OLE DB Destination Input]"
               name="Derived Column Output"
               startId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output]" />
             <path
@@ -763,6 +812,10 @@
     <LayoutInfo>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="190,42"
+          Id="Package\Data Flow Task\Storing Raw Data to DB"
+          TopLeft="162.5,243.749998789281" />
         <NodeLayout
           Size="141,42"
           Id="Package\Data Flow Task\Excel Source"
@@ -805,36 +858,32 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="173,42"
-          Id="Package\Data Flow Task\OLE DB Destination"
-          TopLeft="303,201.499998999139" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Derived Column Output]"
           TopLeft="236.75,174.708332674164">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="152.75,26.7916663249748"
+              EndConnector="20.75,69.041666115117"
               Start="0,0"
-              End="152.75,19.2916663249748">
+              End="20.75,61.541666115117">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,9.39583316248738" />
+                    End="0,30.5208330575585" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,9.39583316248738"
-                    Point2="0,13.3958331624874"
-                    Point3="4,13.3958331624874" />
+                    Point1="0,30.5208330575585"
+                    Point2="0,34.5208330575585"
+                    Point3="4,34.5208330575585" />
                   <mssgle:LineSegment
-                    End="148.75,13.3958331624874" />
+                    End="16.75,34.5208330575585" />
                   <mssgle:CubicBezierSegment
-                    Point1="148.75,13.3958331624874"
-                    Point2="152.75,13.3958331624874"
-                    Point3="152.75,17.3958331624874" />
+                    Point1="16.75,34.5208330575585"
+                    Point2="20.75,34.5208330575585"
+                    Point3="20.75,38.5208330575585" />
                   <mssgle:LineSegment
-                    End="152.75,19.2916663249748" />
+                    End="20.75,61.541666115117" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -847,7 +896,7 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Excel Source">
+    design-time-name="Package\Data Flow Task\Storing Raw Data to DB">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -860,7 +909,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\OLE DB Destination">
+    design-time-name="Package\Data Flow Task\Excel Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

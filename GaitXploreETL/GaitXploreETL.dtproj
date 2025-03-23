@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">OSCA</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA8MJz0bCi/Em1OdpX8qjUfAAAAAACAAAAAAAQZgAAAAEAACAAAAD8Ba3zb6yx2GJqg/R24engRnDJdy1cppr1OB9IJSfHLwAAAAAOgAAAAAIAACAAAACA/OTbYtuPv8h1yqDJMw4DqN/MPF4mkVKNzN9tHgD9E5AAAADCOQE22e8lOAerCTsJgFv8/tFgDQ2NcoHqIdqNYr0obJlC80y6ziu4hnxp0UMf0J8YkmomNsgn3YUqt5Gy/vPg0fyq4yGL56XiVdS51t8K2brf0dBOG5zJSBFs9HQvURWtASKyLUgxetRy7UGMY3aafsOVTX+/i+PxuGEfo+rEc84dcldZj61lxmiJRPQqSwpAAAAAiQHrghB49l02ga6bVWnBnUMMz+77vPT/4pIIG3PmQztfIBhBKjyKLN8FDrY1BwB2hR4nq/7Ph0Y7I+qbqonOiA==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA8MJz0bCi/Em1OdpX8qjUfAAAAAACAAAAAAAQZgAAAAEAACAAAADSkhuelp2vGfu1xG+ELP7B1dl9udeVEX/dfAEi5srUZwAAAAAOgAAAAAIAACAAAADB/izE8t8SVQU88w7Xtti7v/eng/V+y+dWBLgsNsLGP5AAAAB9OrbrJEl1YX45q3ZyHlJrjCWScHhWuDx+8OaiWIqlf7GEvzC4l+qHUy9blPU9oj1Irs9CYMM+h2hwHjzhAzckgEIc58jrTvqw1U3UTf71nHVd698npL0t8Y/PPErlcaJ3zJcFmLBP+S3gk3RQRMC7dnz61llzGBg0ycPIRkbjYlsBYR4R+S/DkY7qxtvkejVAAAAAPbJnILKwnTLiOEdFHYthDVuAqE6LCBPwUDb27juI6OeIiEXoJ7JPr4OgB5sOiQIIA5Mmo1A1ulojHV9bJdzfGg==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -64,7 +64,7 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">Provider=Microsoft.ACE.OLEDB.16.0;Data Source=C:\Users\oscak\Mechanical Engineering\GaitXplore\GaitXplore.xlsx;Extended Properties="Excel 12.0 XML;HDR=YES";</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">Provider=Microsoft.ACE.OLEDB.16.0;Data Source=C:\Users\oscak\Mechanical Engineering\GaitXplore\GaitXplore.xlsx;Extended Properties="EXCEL 12.0 XML;HDR=YES";</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -326,10 +326,10 @@
                 <SSIS:Property SSIS:Name="Name">Package</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">3</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">5</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{7D4F31B3-AB04-4D7A-B4E9-2D1748EF83CF}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{9F273465-6FFC-41F6-948E-FE6DF39F2B9B}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
