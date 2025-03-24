@@ -11,8 +11,8 @@
   DTS:LocaleID="7177"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="11"
-  DTS:VersionGUID="{C87C0A7F-D93F-4C7E-AE01-1B6F25F502D6}">
+  DTS:VersionBuild="16"
+  DTS:VersionGUID="{6924DFAD-AA50-4886-9687-AB743DF9758F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -31,6 +31,81 @@
         <pipeline
           version="1">
           <components>
+            <component
+              refId="Package\Data Flow Task\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input].Columns[loadDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="loadDate"
+                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[loadDate]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Conv_loadDate]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Conv_loadDate]"
+                      name="Conv_loadDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[loadDate]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
             <component
               refId="Package\Data Flow Task\Derived Column"
               componentClassID="Microsoft.DerivedColumn"
@@ -660,17 +735,17 @@
                       externalMetadataColumnId="Package\Data Flow Task\Storing Raw Data to DB.Inputs[OLE DB Destination Input].ExternalColumns[zAngVel]"
                       lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[zAngVel]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\Storing Raw Data to DB.Inputs[OLE DB Destination Input].Columns[loadDate]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="loadDate"
-                      externalMetadataColumnId="Package\Data Flow Task\Storing Raw Data to DB.Inputs[OLE DB Destination Input].ExternalColumns[loadDate]"
-                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[loadDate]" />
-                    <inputColumn
                       refId="Package\Data Flow Task\Storing Raw Data to DB.Inputs[OLE DB Destination Input].Columns[MagAccel]"
                       cachedDataType="r8"
                       cachedName="MagAccel"
                       externalMetadataColumnId="Package\Data Flow Task\Storing Raw Data to DB.Inputs[OLE DB Destination Input].ExternalColumns[MagAccel]"
                       lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[MagAccel]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Storing Raw Data to DB.Inputs[OLE DB Destination Input].Columns[Conv_loadDate]"
+                      cachedDataType="date"
+                      cachedName="Conv_loadDate"
+                      externalMetadataColumnId="Package\Data Flow Task\Storing Raw Data to DB.Inputs[OLE DB Destination Input].ExternalColumns[loadDate]"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Conv_loadDate]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -774,8 +849,13 @@
           </components>
           <paths>
             <path
-              refId="Package\Data Flow Task.Paths[Derived Column Output]"
+              refId="Package\Data Flow Task.Paths[Data Conversion Output]"
               endId="Package\Data Flow Task\Storing Raw Data to DB.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Derived Column Output]"
+              endId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input]"
               name="Derived Column Output"
               startId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output]" />
             <path
@@ -815,7 +895,7 @@
         <NodeLayout
           Size="190,42"
           Id="Package\Data Flow Task\Storing Raw Data to DB"
-          TopLeft="162.5,243.749998789281" />
+          TopLeft="315,310.916665122327" />
         <NodeLayout
           Size="141,42"
           Id="Package\Data Flow Task\Excel Source"
@@ -823,33 +903,71 @@
         <NodeLayout
           Size="154.5,42"
           Id="Package\Data Flow Task\Derived Column"
-          TopLeft="159.5,132.708332674164" />
+          TopLeft="139,110.499999451141" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Excel Source Output]"
           TopLeft="134,80.4583331423087">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="102.75,52.2499995318552"
+              EndConnector="82.25,30.0416663088319"
               Start="0,0"
-              End="102.75,44.7499995318552">
+              End="82.25,22.5416663088319">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,22.1249997659276" />
+                    End="0,11.020833154416" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,22.1249997659276"
-                    Point2="0,26.1249997659276"
-                    Point3="4,26.1249997659276" />
+                    Point1="0,11.020833154416"
+                    Point2="0,15.020833154416"
+                    Point3="4,15.020833154416" />
                   <mssgle:LineSegment
-                    End="98.75,26.1249997659276" />
+                    End="78.25,15.020833154416" />
                   <mssgle:CubicBezierSegment
-                    Point1="98.75,26.1249997659276"
-                    Point2="102.75,26.1249997659276"
-                    Point3="102.75,30.1249997659276" />
+                    Point1="78.25,15.020833154416"
+                    Point2="82.25,15.020833154416"
+                    Point3="82.25,19.020833154416" />
                   <mssgle:LineSegment
-                    End="102.75,44.7499995318552" />
+                    End="82.25,22.5416663088319" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="157,42"
+          Id="Package\Data Flow Task\Data Conversion"
+          TopLeft="186.5,206.833332472377" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Derived Column Output]"
+          TopLeft="216.25,152.499999451141">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="48.75,54.3333330212367"
+              Start="0,0"
+              End="48.75,46.8333330212367">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.1666665106184" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.1666665106184"
+                    Point2="0,27.1666665106184"
+                    Point3="4,27.1666665106184" />
+                  <mssgle:LineSegment
+                    End="44.75,27.1666665106184" />
+                  <mssgle:CubicBezierSegment
+                    Point1="44.75,27.1666665106184"
+                    Point2="48.75,27.1666665106184"
+                    Point3="48.75,31.1666665106184" />
+                  <mssgle:LineSegment
+                    End="48.75,46.8333330212367" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -859,31 +977,31 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Derived Column Output]"
-          TopLeft="236.75,174.708332674164">
+          Id="Package\Data Flow Task.Paths[Data Conversion Output]"
+          TopLeft="265,248.833332472377">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="20.75,69.041666115117"
+              EndConnector="145,62.0833326499499"
               Start="0,0"
-              End="20.75,61.541666115117">
+              End="145,54.5833326499499">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,30.5208330575585" />
+                    End="0,27.0416663249749" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,30.5208330575585"
-                    Point2="0,34.5208330575585"
-                    Point3="4,34.5208330575585" />
+                    Point1="0,27.0416663249749"
+                    Point2="0,31.0416663249749"
+                    Point3="4,31.0416663249749" />
                   <mssgle:LineSegment
-                    End="16.75,34.5208330575585" />
+                    End="141,31.0416663249749" />
                   <mssgle:CubicBezierSegment
-                    Point1="16.75,34.5208330575585"
-                    Point2="20.75,34.5208330575585"
-                    Point3="20.75,38.5208330575585" />
+                    Point1="141,31.0416663249749"
+                    Point2="145,31.0416663249749"
+                    Point3="145,35.0416663249749" />
                   <mssgle:LineSegment
-                    End="20.75,61.541666115117" />
+                    End="145,54.5833326499499" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
