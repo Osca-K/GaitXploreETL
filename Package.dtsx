@@ -11,8 +11,8 @@
   DTS:LocaleID="7177"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="15"
-  DTS:VersionGUID="{BC9DF0BB-0CCD-45F4-883F-A1C1A19DC1B7}">
+  DTS:VersionBuild="17"
+  DTS:VersionGUID="{09796411-5D31-4263-8B02-067021F0C897}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -69,23 +69,6 @@
   </DTS:Variables>
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\ESQLT-Creating Empty Database"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:DTSID="{43DE5B6B-8DDA-4ECC-876C-F5C64E59EA9B}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="ESQLT-Creating Empty Database"
-      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{634C509A-593E-4707-9647-8F09289CD07C}"
-          SQLTask:SqlStatementSource="IF NOT EXISTS (&#xA;    SELECT name &#xA;    FROM sys.databases &#xA;    WHERE name = N'GaitXploreDB'&#xA;)&#xA;BEGIN&#xA;    CREATE DATABASE [GaitXploreDB];&#xA;END;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
       DTS:refId="Package\ST--Structuring JSON to CSV files"
       DTS:CreationName="Microsoft.ScriptTask"
       DTS:Description="Script Task"
@@ -93,7 +76,7 @@
       DTS:ExecutableType="Microsoft.ScriptTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="ST--Structuring JSON to CSV files"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <ScriptProject
@@ -845,11 +828,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
         <NodeLayout
           Size="238.5,42"
           Id="Package\ST--Structuring JSON to CSV files"
-          TopLeft="47.5,37.3749998143563" />
-        <NodeLayout
-          Size="237,42"
-          Id="Package\ESQLT-Creating Empty Database"
-          TopLeft="340,40.0833331342373" />
+          TopLeft="24.5,33.0416665025469" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
