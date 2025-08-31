@@ -11,8 +11,8 @@
   DTS:LocaleID="7177"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="17"
-  DTS:VersionGUID="{09796411-5D31-4263-8B02-067021F0C897}">
+  DTS:VersionBuild="48"
+  DTS:VersionGUID="{22DC5D1C-6FB7-4B8A-B48B-7A76885AC9F0}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -28,8 +28,205 @@
           DTS:ConnectionString="Data Source=OSCA;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package-{634C509A-593E-4707-9647-8F09289CD07C}Data Connection;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:Description="CSV file Manager"
+      DTS:DTSID="{7CE29FF8-B296-4F60-ABC5-3AF9F264E69A}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::FileName]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="7177"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SampleID"
+              DTS:DTSID="{DC1836D0-A54C-4272-BBF8-F60E8F9FF3C3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Position"
+              DTS:DTSID="{550DE398-117F-4ABB-98C2-9DE011C0A38D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Activity"
+              DTS:DTSID="{A41D3625-5C13-4623-9B00-96234303A524}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Pitch"
+              DTS:DTSID="{B118D129-9830-4110-AD7E-54E1B2CCA6B3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Roll"
+              DTS:DTSID="{89F5DD65-76CF-4898-9444-6D998A64498D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Sample No"
+              DTS:DTSID="{84A0624E-61CC-405E-BC0A-DA312ECE3F2C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Yaw"
+              DTS:DTSID="{3F57B20D-ADD7-48B1-A7E4-3C9377264690}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="distance"
+              DTS:DTSID="{CE60F684-C56D-47B2-A73F-9B4A70D6994B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="latitude"
+              DTS:DTSID="{E7112AD3-020F-4304-A557-F60BDF35ACB3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="longitude"
+              DTS:DTSID="{4420B6BA-AE59-4EFC-9692-5CA2BC49487A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="speed"
+              DTS:DTSID="{82E49E16-A4B6-412E-8F49-3FE6089F3818}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="xAccel"
+              DTS:DTSID="{EE011EB9-42F4-464C-BA1D-4D49AFE49D63}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="xAngVel"
+              DTS:DTSID="{1A3935A7-CF50-4532-A38F-C4697CE4F156}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="yAccel"
+              DTS:DTSID="{F2210B91-9FF2-4C9C-A893-614E1F427B2A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="yAngVel"
+              DTS:DTSID="{4DBF54FF-3C8C-4B74-8C75-1FA4C69A6413}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="zAccel"
+              DTS:DTSID="{4DBCD21A-C62C-4EF5-B24D-5AE600DB9B2C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="zAngVel"
+              DTS:DTSID="{A001165A-1679-4AD9-9FDF-AEB9045DAE7B}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[OSCA.GaitXploreDB]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{C899396D-D635-4E2C-AD6A-B4A6CCA4D05F}"
+      DTS:ObjectName="OSCA.GaitXploreDB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=OSCA;Initial Catalog=GaitXploreDB;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package-{C899396D-D635-4E2C-AD6A-B4A6CCA4D05F}OSCA.GaitXploreDB;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
   <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{5C8A7A3D-F124-4DE1-A1C7-2C4909BB34DF}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FileName">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
       DTS:DTSID="{12CEB7F7-782A-47A1-B0D3-26D6431D7FB5}"
@@ -68,6 +265,1146 @@
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Foreach Loop Container"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:Description="Foreach Loop Container"
+      DTS:DTSID="{D1DBC94B-6EB0-4842-8FE2-D9314B395E20}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Foreach Loop Container">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="Microsoft.ForEachFileEnumerator"
+        DTS:DTSID="{B1D43428-A68F-4CAF-99C6-A01912011127}"
+        DTS:ObjectName="{B1D43428-A68F-4CAF-99C6-A01912011127}">
+        <DTS:ObjectData>
+          <ForEachFileEnumeratorProperties>
+            <FEFEProperty
+              Folder="C:\Users\oscak\Projects\GaitXplore\Data\RawDataStructured" />
+            <FEFEProperty
+              FileSpec="*.csv" />
+            <FEFEProperty
+              FileNameRetrievalType="0" />
+            <FEFEProperty
+              Recurse="0" />
+          </ForEachFileEnumeratorProperties>
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Foreach Loop Container\Data Flow Task"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{B9447FA3-C772-49D1-B853-0911D7111A44}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Data Flow Task"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Foreach Loop Container\Data Flow Task\Data Conversion"
+                  componentClassID="Microsoft.DataConvert"
+                  contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Data Conversion"
+                  name="Data Conversion"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Foreach Loop Container\Data Flow Task\Data Conversion.Inputs[Data Conversion Input]"
+                      name="Data Conversion Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Data Conversion.Inputs[Data Conversion Input].Columns[SampleID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="SampleID"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].Columns[SampleID]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Data Conversion.Inputs[Data Conversion Input].Columns[Position]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Position"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].Columns[Position]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Data Conversion.Inputs[Data Conversion Input].Columns[Activity]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Activity"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].Columns[Activity]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop Container\Data Flow Task\Data Conversion.Outputs[Data Conversion Output]"
+                      exclusionGroup="1"
+                      name="Data Conversion Output"
+                      synchronousInputId="Package\Foreach Loop Container\Data Flow Task\Data Conversion.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of SampleID]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="100"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of SampleID]"
+                          name="Copy of SampleID"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].Columns[SampleID]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Position]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="20"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Position]"
+                          name="Copy of Position"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].Columns[Position]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Activity]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="20"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Activity]"
+                          name="Copy of Activity"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].Columns[Activity]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Foreach Loop Container\Data Flow Task\Data Conversion.Outputs[Data Conversion Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Data Conversion Error Output"
+                      synchronousInputId="Package\Foreach Loop Container\Data Flow Task\Data Conversion.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Foreach Loop Container\Data Flow Task\Derived Column"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="Derived Column"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Foreach Loop Container\Data Flow Task\Derived Column.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop Container\Data Flow Task\Derived Column.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\Foreach Loop Container\Data Flow Task\Derived Column.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[FileName]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          length="255"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[FileName]"
+                          name="FileName"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">(DT_WSTR,255)@[User::FileName]</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_WSTR,255)@[User::FileName]</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Foreach Loop Container\Data Flow Task\Derived Column.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\Foreach Loop Container\Data Flow Task\Derived Column.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Source"
+                  localeId="7177"
+                  name="FFS--CSV FILES"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
+                      connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].Columns[SampleID]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].ExternalColumns[SampleID]"
+                          length="50"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].Columns[SampleID]"
+                          name="SampleID"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].Columns[Position]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].ExternalColumns[Position]"
+                          length="50"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].Columns[Position]"
+                          name="Position"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].Columns[Activity]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].ExternalColumns[Activity]"
+                          length="50"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].Columns[Activity]"
+                          name="Activity"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].Columns[Pitch]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].ExternalColumns[Pitch]"
+                          length="50"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].Columns[Pitch]"
+                          name="Pitch"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].Columns[Roll]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].ExternalColumns[Roll]"
+                          length="50"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].Columns[Roll]"
+                          name="Roll"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].Columns[Sample No]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].ExternalColumns[Sample No]"
+                          length="50"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].Columns[Sample No]"
+                          name="Sample No"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].Columns[Yaw]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].ExternalColumns[Yaw]"
+                          length="50"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].Columns[Yaw]"
+                          name="Yaw"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].Columns[distance]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].ExternalColumns[distance]"
+                          length="50"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].Columns[distance]"
+                          name="distance"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].Columns[latitude]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].ExternalColumns[latitude]"
+                          length="50"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].Columns[latitude]"
+                          name="latitude"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].Columns[longitude]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].ExternalColumns[longitude]"
+                          length="50"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].Columns[longitude]"
+                          name="longitude"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].Columns[speed]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].ExternalColumns[speed]"
+                          length="50"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].Columns[speed]"
+                          name="speed"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].Columns[xAccel]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].ExternalColumns[xAccel]"
+                          length="50"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].Columns[xAccel]"
+                          name="xAccel"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].Columns[xAngVel]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].ExternalColumns[xAngVel]"
+                          length="50"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].Columns[xAngVel]"
+                          name="xAngVel"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].Columns[yAccel]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].ExternalColumns[yAccel]"
+                          length="50"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].Columns[yAccel]"
+                          name="yAccel"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].Columns[yAngVel]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].ExternalColumns[yAngVel]"
+                          length="50"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].Columns[yAngVel]"
+                          name="yAngVel"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].Columns[zAccel]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].ExternalColumns[zAccel]"
+                          length="50"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].Columns[zAccel]"
+                          name="zAccel"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].Columns[zAngVel]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].ExternalColumns[zAngVel]"
+                          length="50"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].Columns[zAngVel]"
+                          name="zAngVel"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].ExternalColumns[SampleID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="SampleID" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].ExternalColumns[Position]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Position" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].ExternalColumns[Activity]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Activity" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].ExternalColumns[Pitch]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Pitch" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].ExternalColumns[Roll]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Roll" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].ExternalColumns[Sample No]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Sample No" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].ExternalColumns[Yaw]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Yaw" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].ExternalColumns[distance]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="distance" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].ExternalColumns[latitude]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="latitude" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].ExternalColumns[longitude]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="longitude" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].ExternalColumns[speed]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="speed" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].ExternalColumns[xAccel]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="xAccel" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].ExternalColumns[xAngVel]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="xAngVel" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].ExternalColumns[yAccel]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="yAccel" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].ExternalColumns[yAngVel]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="yAngVel" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].ExternalColumns[zAccel]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="zAccel" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].ExternalColumns[zAngVel]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="zAngVel" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Error Output]"
+                      isErrorOut="true"
+                      name="Flat File Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          codePage="1252"
+                          dataType="text"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[GaitXploreData]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[OSCA.GaitXploreDB]"
+                      connectionManagerRefId="Package.ConnectionManagers[OSCA.GaitXploreDB]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Pitch]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Pitch"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Pitch]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].Columns[Pitch]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Roll]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Roll"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Roll]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].Columns[Roll]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Yaw]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Yaw"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Yaw]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].Columns[Yaw]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[distance]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="distance"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Distance]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].Columns[distance]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[latitude]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="latitude"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Latitude]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].Columns[latitude]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[longitude]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="longitude"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Longitude]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].Columns[longitude]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[speed]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="speed"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Speed]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].Columns[speed]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[xAccel]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="xAccel"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[xAccel]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].Columns[xAccel]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[xAngVel]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="xAngVel"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[xAngVel]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].Columns[xAngVel]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[yAccel]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="yAccel"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[yAccel]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].Columns[yAccel]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[yAngVel]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="yAngVel"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[yAngVel]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].Columns[yAngVel]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[zAccel]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="zAccel"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[zAccel]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].Columns[zAccel]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[zAngVel]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="zAngVel"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[zAngVel]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].Columns[zAngVel]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Activity]"
+                          cachedDataType="wstr"
+                          cachedLength="20"
+                          cachedName="Copy of Activity"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Activity]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Activity]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Position]"
+                          cachedDataType="wstr"
+                          cachedLength="20"
+                          cachedName="Copy of Position"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PhonePosition]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Position]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Sample No]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Sample No"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SampleNo]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output].Columns[Sample No]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of SampleID]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="Copy of SampleID"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SampleID]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of SampleID]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FileName]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="FileName"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FileName]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[FileName]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SampleID]"
+                          dataType="wstr"
+                          length="100"
+                          name="SampleID" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Pitch]"
+                          dataType="r8"
+                          name="Pitch" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Roll]"
+                          dataType="r8"
+                          name="Roll" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SampleNo]"
+                          dataType="i4"
+                          name="SampleNo" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Yaw]"
+                          dataType="r8"
+                          name="Yaw" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Distance]"
+                          dataType="r8"
+                          name="Distance" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Latitude]"
+                          dataType="r8"
+                          name="Latitude" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Longitude]"
+                          dataType="r8"
+                          name="Longitude" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Speed]"
+                          dataType="r8"
+                          name="Speed" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[xAccel]"
+                          dataType="r8"
+                          name="xAccel" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[xAngVel]"
+                          dataType="r8"
+                          name="xAngVel" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[yAccel]"
+                          dataType="r8"
+                          name="yAccel" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[yAngVel]"
+                          dataType="r8"
+                          name="yAngVel" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[zAccel]"
+                          dataType="r8"
+                          name="zAccel" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[zAngVel]"
+                          dataType="r8"
+                          name="zAngVel" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PhonePosition]"
+                          dataType="wstr"
+                          length="20"
+                          name="PhonePosition" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Activity]"
+                          dataType="wstr"
+                          length="20"
+                          name="Activity" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FileName]"
+                          dataType="wstr"
+                          length="255"
+                          name="FileName" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Foreach Loop Container\Data Flow Task.Paths[Data Conversion Output]"
+                  endId="Package\Foreach Loop Container\Data Flow Task\Derived Column.Inputs[Derived Column Input]"
+                  name="Data Conversion Output"
+                  startId="Package\Foreach Loop Container\Data Flow Task\Data Conversion.Outputs[Data Conversion Output]" />
+                <path
+                  refId="Package\Foreach Loop Container\Data Flow Task.Paths[Derived Column Output]"
+                  endId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="Derived Column Output"
+                  startId="Package\Foreach Loop Container\Data Flow Task\Derived Column.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\Foreach Loop Container\Data Flow Task.Paths[Flat File Source Output]"
+                  endId="Package\Foreach Loop Container\Data Flow Task\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Flat File Source Output"
+                  startId="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES.Outputs[Flat File Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{116C871A-6F69-4E04-A177-F500279D06DC}"
+          DTS:ObjectName="{116C871A-6F69-4E04-A177-F500279D06DC}"
+          DTS:ValueIndex="0"
+          DTS:VariableName="User::FileName" />
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\ST--Structuring JSON to CSV files"
       DTS:CreationName="Microsoft.ScriptTask"
@@ -389,21 +1726,46 @@ namespace ST_06e08f649ac544d293f69684557531cf
                     var rows = new List<Dictionary<string, string>>();
                     var headers = new HashSet<string>();
 
-                    // add SampleID column
+                 
                     headers.Add("SampleID");
+
+                  
+                    headers.Add("Position");
+                    headers.Add("Activity");
 
                     foreach (var entry in root)
                     {
                         var row = new Dictionary<string, string>();
 
-                        // store outer key as SampleID
+                    
                         row["SampleID"] = entry.Key;
 
                         foreach (var field in (JObject)entry.Value)
                         {
-                            row[field.Key] = field.Value.ToString();
+                            row[field.Key] = Convert.ToString(field.Value, System.Globalization.CultureInfo.InvariantCulture);
+
                             headers.Add(field.Key);
                         }
+
+                       
+                        int fileIndex = iNumberOfFiles + 1;
+
+                        if (fileIndex >= 1 && fileIndex <= 3)
+                            row["Position"] = "Pocket";
+                        else if (fileIndex >= 4 && fileIndex <= 6)
+                            row["Position"] = "Hand";
+                        else
+                            row["Position"] = "Unknown";
+
+                        if (fileIndex == 1 || fileIndex == 4)
+                            row["Activity"] = "Relaxed";
+                        else if (fileIndex == 2 || fileIndex == 5)
+                            row["Activity"] = "Fast";
+                        else if (fileIndex == 3 || fileIndex == 6)
+                            row["Activity"] = "Jogging";
+                        else
+                            row["Activity"] = "Unknown";
+
                         rows.Add(row);
                     }
 
@@ -412,11 +1774,11 @@ namespace ST_06e08f649ac544d293f69684557531cf
 
                     using (StreamWriter writer = new StreamWriter(csvFile))
                     {
-                        // headers
+                        
                         string[] headerArray = new List<string>(headers).ToArray();
                         writer.WriteLine(string.Join(",", headerArray));
 
-                        // rows
+                     
                         foreach (var row in rows)
                         {
                             List<string> values = new List<string>();
@@ -429,7 +1791,7 @@ namespace ST_06e08f649ac544d293f69684557531cf
                         }
                     }
 
-                    // move processed JSON
+             
                     string destFile = Path.Combine(sPathToUsedJSONFile, Path.GetFileName(jsonFile));
                     if (File.Exists(destFile)) File.Delete(destFile);
                     File.Move(jsonFile, destFile);
@@ -443,9 +1805,6 @@ namespace ST_06e08f649ac544d293f69684557531cf
             }
 
             Dts.Variables["NumberOfFiles"].Value = iNumberOfFiles;
-
-
-
 
             Dts.TaskResult = (int)ScriptResults.Success;
 		}
@@ -474,7 +1833,7 @@ namespace ST_06e08f649ac544d293f69684557531cf
     <msb:CodeName>ST_06e08f649ac544d293f69684557531cf</msb:CodeName>
     <msb:Language>msBuild</msb:Language>
     <msb:DisplayName>ST_06e08f649ac544d293f69684557531cf</msb:DisplayName>
-    <msb:ProjectId>{D72DE0DC-ECF3-47CE-934B-9CABCEEA0BAE}</msb:ProjectId>
+    <msb:ProjectId>{75E3D0F6-D167-4DEE-B004-13926D4022A2}</msb:ProjectId>
   </msb:PropertyGroup>
   <msb:ItemGroup>
     <msb:Project Include="ST_06e08f649ac544d293f69684557531cf.csproj" />
@@ -529,7 +1888,7 @@ namespace ST_06e08f649ac544d293f69684557531cf
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>C:\Users\oscak\AppData\Local\Temp\Vsta\SSIS_ST160\VstaMKnThmaa9EmqeDKae3__mvw\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>C:\Users\oscak\AppData\Local\Temp\Vsta\SSIS_ST160\VstapEblh2tG5Uy90j3J3jHUhw\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -658,148 +2017,122 @@ namespace ST_06e08f649ac544d293f69684557531cf.Properties {
           <BinaryItem
             Name="ST_06e08f649ac544d293f69684557531cf.dll">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
-ZGUuDQ0KJAAAAAAAAABQRQAATAEDAI9BtGgAAAAAAAAAAOAAIiALATAAABgAAAAIAAAAAAAAhjYA
+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
-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
+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
-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
+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
-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
-AMkFEABRAMkFEABZAMkFEABhAMkFEABpAMkFBgDJAMkFBgDxAMkFFQABAckFBgBxANYGgAAJAZsG
-hgARAZEEjAAZAYIDkwDRAOsDlwAhAakGmwApAT0HogAxAccBpwAMAMkFBgAUAMkFBgAUAK4AvwAx
-AbsFxQAcACgH3wAkAMkFBgAsAFEH3wAkAJoE8wAsAIID+wA5ATQHAAFBAb8BBgAMAK4ABAFJAdIE
-ogBRAf4GCgFJAUIBCgGpAMkFEAA0AMkFFgE0AEkHIQFRAc0EJwFhATgBEAAMALsFLgE8ACgH3wA0
-AMkFBgAkAJYDQgE0AK4ABAFRAc0ESwE8ADQHAAFJAQwBogApAfcGVgEpAeIBWwEpAagDYAEJAewG
-ZgG5AMIAlwBRAf4GbAFpAaUFdAEZAYwDfQEJARkHAQBxAMkFBgDRAMkFBgB5AfUAggF5AVkHiwHZ
-AMkFkQH5AMkFBgAIABQAtAEIABgAuQEpAHMAIQIuAAsA+QEuABMAAgIuABsAIQIuACMAKgIuACsA
-UwIuADMAUwIuADsAUwIuAEMAKgIuAEsAWQIuAFMAUwIuAFsAcAJDAGMAuQFJAHMAIQJhAHsAuQFj
-AGsAuQEbAAMAAQAEAAMAAABpBeoBAACDAe8BAAARB/QBAgAEAAMAAgAFAAUAAQAGAAUAAgAHAAcA
-rgC5ANMA5ADrABABNwEEgAAAAQAAAJ4kl2YAAAAAAACtAwAABAAAAAAAAAAAAAAAmQGKAAAAAAAQ
-AAAAAAAAAAAAAACiAfkDAAAAAAQAAAAAAAAAAAAAAJkBTwEAAAAADQAAAAAAAAAAAAAAqwE0BQAA
-AAAEAAAAAAAAAAAAAACZAaMEAAAAABAAAAAAAAAAAAAAAKIBYwAAAAAAAAAAAAEAAAAaBgAABQAC
-AAAAAElFbnVtZXJhYmxlYDEASUVudW1lcmF0b3JgMQBIYXNoU2V0YDEATGlzdGAxAEludDMyAEtl
-eVZhbHVlUGFpcmAyAERpY3Rpb25hcnlgMgA8TW9kdWxlPgBTeXN0ZW0uSU8ATWljcm9zb2Z0LlNx
-bFNlcnZlci5NYW5hZ2VkRFRTAHZhbHVlX18AbXNjb3JsaWIAU3lzdGVtLkNvbGxlY3Rpb25zLkdl
-bmVyaWMAQWRkAGRlZmF1bHRJbnN0YW5jZQBnZXRfTWVzc2FnZQBWYXJpYWJsZQBJRGlzcG9zYWJs
-ZQBSdW50aW1lVHlwZUhhbmRsZQBHZXRUeXBlRnJvbUhhbmRsZQBGaWxlAEdldEZpbGVOYW1lAE1p
-Y3Jvc29mdC5TcWxTZXJ2ZXIuRHRzLlJ1bnRpbWUAV3JpdGVMaW5lAENvbWJpbmUAVHlwZQBTeXN0
-ZW0uQ29yZQBGYWlsdXJlAGdldF9DdWx0dXJlAHNldF9DdWx0dXJlAHJlc291cmNlQ3VsdHVyZQBW
-U1RBUlRTY3JpcHRPYmplY3RNb2RlbEJhc2UAQXBwbGljYXRpb25TZXR0aW5nc0Jhc2UARGlzcG9z
-ZQBQYXJzZQBFZGl0b3JCcm93c2FibGVTdGF0ZQBEZWxldGUAQ29tcGlsZXJHZW5lcmF0ZWRBdHRy
-aWJ1dGUARGVidWdnZXJOb25Vc2VyQ29kZUF0dHJpYnV0ZQBEZWJ1Z2dhYmxlQXR0cmlidXRlAEVk
-aXRvckJyb3dzYWJsZUF0dHJpYnV0ZQBBc3NlbWJseVRpdGxlQXR0cmlidXRlAEFzc2VtYmx5VHJh
-ZGVtYXJrQXR0cmlidXRlAFRhcmdldEZyYW1ld29ya0F0dHJpYnV0ZQBBc3NlbWJseUNvbmZpZ3Vy
-YXRpb25BdHRyaWJ1dGUAQXNzZW1ibHlEZXNjcmlwdGlvbkF0dHJpYnV0ZQBDb21waWxhdGlvblJl
-bGF4YXRpb25zQXR0cmlidXRlAEFzc2VtYmx5UHJvZHVjdEF0dHJpYnV0ZQBBc3NlbWJseUNvcHly
-aWdodEF0dHJpYnV0ZQBTU0lTU2NyaXB0VGFza0VudHJ5UG9pbnRBdHRyaWJ1dGUAQXNzZW1ibHlD
-b21wYW55QXR0cmlidXRlAFJ1bnRpbWVDb21wYXRpYmlsaXR5QXR0cmlidXRlAGdldF9WYWx1ZQBz
-ZXRfVmFsdWUAVHJ5R2V0VmFsdWUAdmFsdWUATW92ZQBTVF8wNmUwOGY2NDlhYzU0NGQyOTNmNjk2
-ODQ1NTc1MzFjZgBTeXN0ZW0uUnVudGltZS5WZXJzaW9uaW5nAFRvU3RyaW5nAFBhdGgATWljcm9z
-b2Z0LlNxbFNlcnZlci5TY3JpcHRUYXNrAE1pY3Jvc29mdC5TcWxTZXJ2ZXIuRHRzLlRhc2tzLlNj
-cmlwdFRhc2sAU2NyaXB0T2JqZWN0TW9kZWwAU3lzdGVtLkNvbXBvbmVudE1vZGVsAFNUXzA2ZTA4
-ZjY0OWFjNTQ0ZDI5M2Y2OTY4NDU1NzUzMWNmLmRsbABnZXRfSXRlbQBzZXRfSXRlbQBTeXN0ZW0A
-RW51bQByZXNvdXJjZU1hbgBKVG9rZW4AU2NyaXB0TWFpbgBKb2luAEdldEZpbGVOYW1lV2l0aG91
-dEV4dGVuc2lvbgBTeXN0ZW0uQ29uZmlndXJhdGlvbgBTeXN0ZW0uR2xvYmFsaXphdGlvbgBTeXN0
-ZW0uUmVmbGVjdGlvbgBFeGNlcHRpb24ATmV3dG9uc29mdC5Kc29uAEN1bHR1cmVJbmZvAE5ld3Rv
-bnNvZnQuSnNvbi5MaW5xAGdldF9SZXNvdXJjZU1hbmFnZXIARXZlbnRzT2JqZWN0V3JhcHBlcgBT
-dHJlYW1Xcml0ZXIAVGV4dFdyaXRlcgBGaXJlRXJyb3IASUVudW1lcmF0b3IAR2V0RW51bWVyYXRv
-cgAuY3RvcgAuY2N0b3IAU3lzdGVtLkRpYWdub3N0aWNzAFN5c3RlbS5SdW50aW1lLkNvbXBpbGVy
-U2VydmljZXMAU3lzdGVtLlJlc291cmNlcwBTVF8wNmUwOGY2NDlhYzU0NGQyOTNmNjk2ODQ1NTc1
-MzFjZi5Qcm9wZXJ0aWVzLlJlc291cmNlcy5yZXNvdXJjZXMARGVidWdnaW5nTW9kZXMAU1RfMDZl
-MDhmNjQ5YWM1NDRkMjkzZjY5Njg0NTU3NTMxY2YuUHJvcGVydGllcwBnZXRfVmFyaWFibGVzAEdl
-dEZpbGVzAFNldHRpbmdzAFN5c3RlbS5Db2xsZWN0aW9ucwBTdWNjZXNzAGdldF9EdHMAU2NyaXB0
-UmVzdWx0cwBnZXRfRXZlbnRzAEV4aXN0cwBDb25jYXQASk9iamVjdABnZXRfRGVmYXVsdABzZXRf
-VGFza1Jlc3VsdABnZXRfQ3VycmVudABNb3ZlTmV4dABSZWFkQWxsVGV4dABUb0FycmF5AGdldF9L
-ZXkAZ2V0X0Fzc2VtYmx5AERpcmVjdG9yeQAAI1AAYQB0AGgAVABvAEoAUwBPAE4AUgBhAHcARABh
-AHQAYQAAIVAAYQB0AGgAVABvAEMAUwBWAFIAYQB3AEQAYQB0AGEAACVQAGEAdABoAFQAbwBVAHMA
-ZQBkAEoAUwBPAE4ARgBpAGwAZQAADSoALgBqAHMAbwBuAAARUwBhAG0AcABsAGUASQBEAAAJLgBj
-AHMAdgAAAywAAAEAF1MAYwByAGkAcAB0ACAAVABhAHMAawAAI0UAcgByAG8AcgAgAHAAcgBvAGMA
-ZQBzAHMAaQBuAGcAIAAABToAIAAAG04AdQBtAGIAZQByAE8AZgBGAGkAbABlAHMAAHFTAFQAXwAw
-ADYAZQAwADgAZgA2ADQAOQBhAGMANQA0ADQAZAAyADkAMwBmADYAOQA2ADgANAA1ADUANwA1ADMA
-MQBjAGYALgBQAHIAbwBwAGUAcgB0AGkAZQBzAC4AUgBlAHMAbwB1AHIAYwBlAHMAAAAAAI0ek8II
-FaFHo/aMqFnBNoAABCABAQgDIAABBSABARERBCABAQ4FIAEBEXVkBxkODggdDggOFRI9ARUSQQIO
-DhUSRQEODg4VEkkBFRFNAg4SURURTQIOElEVEkECDg4VEkkBFRFNAg4SURURTQIOElESVR0OFRFZ
-ARUSQQIODhUSQQIODhUSPQEOHQ4IDg4SXQUgABKAhQUgABKAiQYgARKAjRwDIAAcAyAADgYAAh0O
-Dg4EAAEODgYAARKAmQ4KFRI9ARUSQQIODgUVEkUBDgUgAQITAA0gABUSSQEVEU0CDhJRCxUSSQEV
-EU0CDhJRBCAAEwAGFRJBAg4OBxURTQIOElEHIAIBEwATAQQgABMBAyAAAgUgAQETAAUAAg4ODgUV
-Ej0BDgogAQEVEoCtARMABSAAHRMABgACDg4dDgggABURWQETAAoVEVkBFRJBAg4OCCACAhMAEBMB
-CgACDg4VEoCtAQ4EAAECDgQAAQEOBQACAQ4OBSAAEoC1BwAEDg4ODg4IIAUCCA4ODggEIAEBHAgA
-ARKAvRGAwQUgABKAxQcgAgEOEoDFCLd6XFYZNOCJCImEXc2AgMyRCDCtT+aypq7tBAAAAAAEAQAA
-AAMGEm0DBhJxAwYSEAIGCAMGERQEAAASbQQAABJxBQABARJxBAAAEhADAAABBAgAEm0ECAAScQQI
-ABIQCAEACAAAAAAAHgEAAQBUAhZXcmFwTm9uRXhjZXB0aW9uVGhyb3dzAQgBAAIAAAAAACgBACNT
-VF8wNmUwOGY2NDlhYzU0NGQyOTNmNjk2ODQ1NTc1MzFjZgAABQEAAAAAFgEAEUNvcHlyaWdodCBA
-ICAyMDI1AABJAQAaLk5FVEZyYW1ld29yayxWZXJzaW9uPXY0LjcBAFQOFEZyYW1ld29ya0Rpc3Bs
-YXlOYW1lEi5ORVQgRnJhbWV3b3JrIDQuNwAAtAAAAM7K774BAAAAkQAAAGxTeXN0ZW0uUmVzb3Vy
-Y2VzLlJlc291cmNlUmVhZGVyLCBtc2NvcmxpYiwgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5l
-dXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkjU3lzdGVtLlJlc291cmNlcy5S
-dW50aW1lUmVzb3VyY2VTZXQCAAAAAAAAAAAAAABQQURQQURQtAAAAFw2AAAAAAAAAAAAAHY2AAAA
-IAAAAAAAAAAAAAAAAAAAAAAAAAAAAABoNgAAAAAAAAAAAAAAAF9Db3JEbGxNYWluAG1zY29yZWUu
-ZGxsAAAAAAD/JQAgABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAEAEAAAABgAAIAAAAAAAAAAAAAAAAAAAAEAAQAAADAAAIAAAAAAAAAAAAAAAAAAAAEAAAAAAEgA
-AABYQAAAGgQAAAAAAAAAAAAAGgQ0AAAAVgBTAF8AVgBFAFIAUwBJAE8ATgBfAEkATgBGAE8AAAAA
-AL0E7/4AAAEAAAABAJdmniQAAAEAl2aeJD8AAAAAAAAABAAAAAIAAAAAAAAAAAAAAAAAAABEAAAA
-AQBWAGEAcgBGAGkAbABlAEkAbgBmAG8AAAAAACQABAAAAFQAcgBhAG4AcwBsAGEAdABpAG8AbgAA
-AAAAAACwBHoDAAABAFMAdAByAGkAbgBnAEYAaQBsAGUASQBuAGYAbwAAAFYDAAABADAAMAAwADAA
-MAA0AGIAMAAAABoAAQABAEMAbwBtAG0AZQBuAHQAcwAAAAAAAAAiAAEAAQBDAG8AbQBwAGEAbgB5
-AE4AYQBtAGUAAAAAAAAAAABwACQAAQBGAGkAbABlAEQAZQBzAGMAcgBpAHAAdABpAG8AbgAAAAAA
-UwBUAF8AMAA2AGUAMAA4AGYANgA0ADkAYQBjADUANAA0AGQAMgA5ADMAZgA2ADkANgA4ADQANQA1
-ADcANQAzADEAYwBmAAAAPgAPAAEARgBpAGwAZQBWAGUAcgBzAGkAbwBuAAAAAAAxAC4AMAAuADkA
-MwA3ADQALgAyADYAMgA2ADMAAAAAAHAAKAABAEkAbgB0AGUAcgBuAGEAbABOAGEAbQBlAAAAUwBU
-AF8AMAA2AGUAMAA4AGYANgA0ADkAYQBjADUANAA0AGQAMgA5ADMAZgA2ADkANgA4ADQANQA1ADcA
-NQAzADEAYwBmAC4AZABsAGwAAABIABIAAQBMAGUAZwBhAGwAQwBvAHAAeQByAGkAZwBoAHQAAABD
-AG8AcAB5AHIAaQBnAGgAdAAgAEAAIAAgADIAMAAyADUAAAAqAAEAAQBMAGUAZwBhAGwAVAByAGEA
-ZABlAG0AYQByAGsAcwAAAAAAAAAAAHgAKAABAE8AcgBpAGcAaQBuAGEAbABGAGkAbABlAG4AYQBt
-AGUAAABTAFQAXwAwADYAZQAwADgAZgA2ADQAOQBhAGMANQA0ADQAZAAyADkAMwBmADYAOQA2ADgA
-NAA1ADUANwA1ADMAMQBjAGYALgBkAGwAbAAAAGgAJAABAFAAcgBvAGQAdQBjAHQATgBhAG0AZQAA
-AAAAUwBUAF8AMAA2AGUAMAA4AGYANgA0ADkAYQBjADUANAA0AGQAMgA5ADMAZgA2ADkANgA4ADQA
-NQA1ADcANQAzADEAYwBmAAAAQgAPAAEAUAByAG8AZAB1AGMAdABWAGUAcgBzAGkAbwBuAAAAMQAu
-ADAALgA5ADMANwA0AC4AMgA2ADIANgAzAAAAAABGAA8AAQBBAHMAcwBlAG0AYgBsAHkAIABWAGUA
-cgBzAGkAbwBuAAAAMQAuADAALgA5ADMANwA0AC4AMgA2ADIANgAzAAAAAAAAAAAAAAAAAAAAAAAA
-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
+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
+BbgEBgC/BLgEBgAZAvsFBgArB7gEBgCOBS4GBgBZBRgFFgDiAWgEFgBKAmgEFgC8AQMFBgD+AQ4G
+CgBWBC0EGgDEBhgBGgDOABgBBgCTB1kABgAHAVkAEgAqB2UFBgBZB7gEBgB6BbgEBgDUBeAGBgDX
+ALgEBgAJBFkABgACBLgEBgABAJMABgC/BVkACgCeBS0EBgAuALgEBgBKAbgEBgDjALgEBgCKBy0F
+AAAAAFAAAAAAAAEAAQABABAA1wTCAzkAAQABAAAAEAA1BpEGaQABAAMAAAEQANcGkQZ9AAMABwAD
+AQAAAwcAAGEABAAKABEAxATMAREAewHQAREAsgDUAQYGggDYAVaA8wbbAVaAWwHbAVAgAAAAAIYA
+3QQGAAEAeCQAAAAAhhjuBQYAAQCAJAAAAACDGO4FBgABAIgkAAAAAJMIigXfAQEAtCQAAAAAkwhj
+AQEBAQC7JAAAAACTCG8B5AEBAMMkAAAAAJYIMgfqAQIAyiQAAAAAhhjuBQYAAgDSJAAAAACRGPQF
+7wECAAAAAQC3AwkA7gUBABEA7gUGABkA7gUKACkA7gUQADEA7gUQADkA7gUQAEEA7gUQAEkA7gUQ
+AFEA7gUQAFkA7gUQAGEA7gUQAGkA7gUGAMkA7gUGAPEA7gUVAAEB7gUGAHEA+waBAAkBwAaHABEB
+pgSNABkBlwOUANEAAASYACEBzgacACkBagejADEB3AGoAAwA7gUGABQA7gUGABQArgDAADEB4AXG
+ABwATQfgACQA7gUGACwAfgfgACQArwT0ACwAlwP8AOEAiwEBATkBAAQGAUkBYQcOAVEB1AEGAAwA
+rgASAVkB5wSjAGEBIwcYAVkBQgEYAakA7gUQADQA7gUkATQAdgcvAWEB4gQ1AXEBOAEQAAwA4AU8
+ATwATQfgADQA7gUGACQAqwNQATQArgASAWEB4gRZATwAYQcOAVkBDAGjACkBHAdkASkB9wFpASkB
+vQNuAQkBEQd0AbkAwgCYAGEBIwd6AXkBygWCARkBoQOLAQkBPgcBAHEA7gUGANEA7gUGAIkB9QCQ
+AYkBhgeZAdkA7gWfAfkA7gUGAAgAFADCAQgAGADHASkAcwAqAi4ACwACAi4AEwALAi4AGwAqAi4A
+IwAzAi4AKwBcAi4AMwBcAi4AOwBcAi4AQwAzAi4ASwBiAi4AUwBcAi4AWwB5AkMAYwDHAUkAcwAq
+AmEAewDHAWMAawDHARsAAwABAAQAAwAAAI4F8wEAAJgB+AEAADYH/QECAAQAAwACAAUABQABAAYA
+BQACAAcABwCvALoA1ADlAOwAHgFFAQSAAAABAAAAniTaoQAAAAAAAMIDAAAEAAAAAAAAAAAAAACn
+AYoAAAAAABAAAAAAAAAAAAAAALABDgQAAAAABAAAAAAAAAAAAAAApwFPAQAAAAANAAAAAAAAAAAA
+AAC5AUkFAAAAAAQAAAAAAAAAAAAAAKcBuAQAAAAAEAAAAAAAAAAAAAAAsAFjAAAAAAAAAAAAAQAA
+AD8GAAAFAAIAAAAASUVudW1lcmFibGVgMQBJRW51bWVyYXRvcmAxAEhhc2hTZXRgMQBMaXN0YDEA
+SW50MzIAS2V5VmFsdWVQYWlyYDIARGljdGlvbmFyeWAyADxNb2R1bGU+AFN5c3RlbS5JTwBNaWNy
+b3NvZnQuU3FsU2VydmVyLk1hbmFnZWREVFMAdmFsdWVfXwBtc2NvcmxpYgBTeXN0ZW0uQ29sbGVj
+dGlvbnMuR2VuZXJpYwBBZGQAZGVmYXVsdEluc3RhbmNlAGdldF9NZXNzYWdlAFZhcmlhYmxlAElE
+aXNwb3NhYmxlAFJ1bnRpbWVUeXBlSGFuZGxlAEdldFR5cGVGcm9tSGFuZGxlAEZpbGUAR2V0Rmls
+ZU5hbWUATWljcm9zb2Z0LlNxbFNlcnZlci5EdHMuUnVudGltZQBXcml0ZUxpbmUAQ29tYmluZQBU
+eXBlAFN5c3RlbS5Db3JlAEZhaWx1cmUAZ2V0X0N1bHR1cmUAc2V0X0N1bHR1cmUAcmVzb3VyY2VD
+dWx0dXJlAGdldF9JbnZhcmlhbnRDdWx0dXJlAFZTVEFSVFNjcmlwdE9iamVjdE1vZGVsQmFzZQBB
+cHBsaWNhdGlvblNldHRpbmdzQmFzZQBEaXNwb3NlAFBhcnNlAEVkaXRvckJyb3dzYWJsZVN0YXRl
+AERlbGV0ZQBDb21waWxlckdlbmVyYXRlZEF0dHJpYnV0ZQBEZWJ1Z2dlck5vblVzZXJDb2RlQXR0
+cmlidXRlAERlYnVnZ2FibGVBdHRyaWJ1dGUARWRpdG9yQnJvd3NhYmxlQXR0cmlidXRlAEFzc2Vt
+Ymx5VGl0bGVBdHRyaWJ1dGUAQXNzZW1ibHlUcmFkZW1hcmtBdHRyaWJ1dGUAVGFyZ2V0RnJhbWV3
+b3JrQXR0cmlidXRlAEFzc2VtYmx5Q29uZmlndXJhdGlvbkF0dHJpYnV0ZQBBc3NlbWJseURlc2Ny
+aXB0aW9uQXR0cmlidXRlAENvbXBpbGF0aW9uUmVsYXhhdGlvbnNBdHRyaWJ1dGUAQXNzZW1ibHlQ
+cm9kdWN0QXR0cmlidXRlAEFzc2VtYmx5Q29weXJpZ2h0QXR0cmlidXRlAFNTSVNTY3JpcHRUYXNr
+RW50cnlQb2ludEF0dHJpYnV0ZQBBc3NlbWJseUNvbXBhbnlBdHRyaWJ1dGUAUnVudGltZUNvbXBh
+dGliaWxpdHlBdHRyaWJ1dGUAZ2V0X1ZhbHVlAHNldF9WYWx1ZQBUcnlHZXRWYWx1ZQB2YWx1ZQBN
+b3ZlAFNUXzA2ZTA4ZjY0OWFjNTQ0ZDI5M2Y2OTY4NDU1NzUzMWNmAFN5c3RlbS5SdW50aW1lLlZl
+cnNpb25pbmcAVG9TdHJpbmcAUGF0aABNaWNyb3NvZnQuU3FsU2VydmVyLlNjcmlwdFRhc2sATWlj
+cm9zb2Z0LlNxbFNlcnZlci5EdHMuVGFza3MuU2NyaXB0VGFzawBTY3JpcHRPYmplY3RNb2RlbABT
+eXN0ZW0uQ29tcG9uZW50TW9kZWwAU1RfMDZlMDhmNjQ5YWM1NDRkMjkzZjY5Njg0NTU3NTMxY2Yu
+ZGxsAGdldF9JdGVtAHNldF9JdGVtAFN5c3RlbQBFbnVtAHJlc291cmNlTWFuAEpUb2tlbgBTY3Jp
+cHRNYWluAEpvaW4AR2V0RmlsZU5hbWVXaXRob3V0RXh0ZW5zaW9uAFN5c3RlbS5Db25maWd1cmF0
+aW9uAFN5c3RlbS5HbG9iYWxpemF0aW9uAFN5c3RlbS5SZWZsZWN0aW9uAEV4Y2VwdGlvbgBOZXd0
+b25zb2Z0Lkpzb24AQ3VsdHVyZUluZm8ATmV3dG9uc29mdC5Kc29uLkxpbnEASUZvcm1hdFByb3Zp
+ZGVyAGdldF9SZXNvdXJjZU1hbmFnZXIARXZlbnRzT2JqZWN0V3JhcHBlcgBTdHJlYW1Xcml0ZXIA
+VGV4dFdyaXRlcgBGaXJlRXJyb3IASUVudW1lcmF0b3IAR2V0RW51bWVyYXRvcgAuY3RvcgAuY2N0
+b3IAU3lzdGVtLkRpYWdub3N0aWNzAFN5c3RlbS5SdW50aW1lLkNvbXBpbGVyU2VydmljZXMAU3lz
+dGVtLlJlc291cmNlcwBTVF8wNmUwOGY2NDlhYzU0NGQyOTNmNjk2ODQ1NTc1MzFjZi5Qcm9wZXJ0
+aWVzLlJlc291cmNlcy5yZXNvdXJjZXMARGVidWdnaW5nTW9kZXMAU1RfMDZlMDhmNjQ5YWM1NDRk
+MjkzZjY5Njg0NTU3NTMxY2YuUHJvcGVydGllcwBnZXRfVmFyaWFibGVzAEdldEZpbGVzAFNldHRp
+bmdzAFN5c3RlbS5Db2xsZWN0aW9ucwBTdWNjZXNzAGdldF9EdHMAU2NyaXB0UmVzdWx0cwBnZXRf
+RXZlbnRzAEV4aXN0cwBDb25jYXQASk9iamVjdABnZXRfRGVmYXVsdABzZXRfVGFza1Jlc3VsdABn
+ZXRfQ3VycmVudABDb252ZXJ0AE1vdmVOZXh0AFJlYWRBbGxUZXh0AFRvQXJyYXkAZ2V0X0tleQBn
+ZXRfQXNzZW1ibHkARGlyZWN0b3J5AAAAAAAjUABhAHQAaABUAG8ASgBTAE8ATgBSAGEAdwBEAGEA
+dABhAAAhUABhAHQAaABUAG8AQwBTAFYAUgBhAHcARABhAHQAYQAAJVAAYQB0AGgAVABvAFUAcwBl
+AGQASgBTAE8ATgBGAGkAbABlAAANKgAuAGoAcwBvAG4AABFTAGEAbQBwAGwAZQBJAEQAABFQAG8A
+cwBpAHQAaQBvAG4AABFBAGMAdABpAHYAaQB0AHkAAA1QAG8AYwBrAGUAdAAACUgAYQBuAGQAAA9V
+AG4AawBuAG8AdwBuAAAPUgBlAGwAYQB4AGUAZAAACUYAYQBzAHQAAA9KAG8AZwBnAGkAbgBnAAAJ
+LgBjAHMAdgAAAywAAAEAF1MAYwByAGkAcAB0ACAAVABhAHMAawAAI0UAcgByAG8AcgAgAHAAcgBv
+AGMAZQBzAHMAaQBuAGcAIAAABToAIAAAG04AdQBtAGIAZQByAE8AZgBGAGkAbABlAHMAAHFTAFQA
+XwAwADYAZQAwADgAZgA2ADQAOQBhAGMANQA0ADQAZAAyADkAMwBmADYAOQA2ADgANAA1ADUANwA1
+ADMAMQBjAGYALgBQAHIAbwBwAGUAcgB0AGkAZQBzAC4AUgBlAHMAbwB1AHIAYwBlAHMAAAD9M7sn
+P21zRYS+0fnQ4JxtAAQgAQEIAyAAAQUgAQEREQQgAQEOBSABARF1ZQcaDg4IHQ4IDhUSPQEVEkEC
+Dg4VEkUBDg4OFRJJARURTQIOElEVEU0CDhJRFRJBAg4OCBUSSQEVEU0CDhJRFRFNAg4SURJVHQ4V
+EVkBFRJBAg4OFRJBAg4OFRI9AQ4dDggODhJdBSAAEoCFBSAAEoCJBiABEoCNHAMgABwDIAAOBgAC
+HQ4ODgQAAQ4OBgABEoCZDgoVEj0BFRJBAg4OBRUSRQEOBSABAhMADSAAFRJJARURTQIOElELFRJJ
+ARURTQIOElEEIAATAAYVEkECDg4HFRFNAg4SUQcgAgETABMBBCAAEwEEAAAScQcAAg4cEoChAyAA
+AgUgAQETAAUAAg4ODgUVEj0BDgogAQEVEoC1ARMABSAAHRMABgACDg4dDgggABURWQETAAoVEVkB
+FRJBAg4OCCACAhMAEBMBCgACDg4VEoC1AQ4EAAECDgQAAQEOBQACAQ4OBSAAEoC9BwAEDg4ODg4I
+IAUCCA4ODggEIAEBHAgAARKAxRGAyQUgABKAzQcgAgEOEoDNCLd6XFYZNOCJCImEXc2AgMyRCDCt
+T+aypq7tBAAAAAAEAQAAAAMGEm0DBhJxAwYSEAIGCAMGERQEAAASbQUAAQEScQQAABIQAwAAAQQI
+ABJtBAgAEnEECAASEAgBAAgAAAAAAB4BAAEAVAIWV3JhcE5vbkV4Y2VwdGlvblRocm93cwEIAQAC
+AAAAAAAoAQAjU1RfMDZlMDhmNjQ5YWM1NDRkMjkzZjY5Njg0NTU3NTMxY2YAAAUBAAAAABYBABFD
+b3B5cmlnaHQgQCAgMjAyNQAASQEAGi5ORVRGcmFtZXdvcmssVmVyc2lvbj12NC43AQBUDhRGcmFt
+ZXdvcmtEaXNwbGF5TmFtZRIuTkVUIEZyYW1ld29yayA0LjcAtAAAAM7K774BAAAAkQAAAGxTeXN0
+ZW0uUmVzb3VyY2VzLlJlc291cmNlUmVhZGVyLCBtc2NvcmxpYiwgVmVyc2lvbj00LjAuMC4wLCBD
+dWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkjU3lzdGVtLlJl
+c291cmNlcy5SdW50aW1lUmVzb3VyY2VTZXQCAAAAAAAAAAAAAABQQURQQURQtAAAAPQ3AAAAAAAA
+AAAAAA44AAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOAAAAAAAAAAAAAAAAF9Db3JEbGxNYWlu
+AG1zY29yZWUuZGxsAAAAAAD/JQAgABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -808,7 +2141,42 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
+AQAQAAAAGAAAgAAAAAAAAAAAAAAAAAAAAQABAAAAMAAAgAAAAAAAAAAAAAAAAAAAAQAAAAAASAAA
+AFhAAAAaBAAAAAAAAAAAAAAaBDQAAABWAFMAXwBWAEUAUgBTAEkATwBOAF8ASQBOAEYATwAAAAAA
+vQTv/gAAAQAAAAEA2qGeJAAAAQDaoZ4kPwAAAAAAAAAEAAAAAgAAAAAAAAAAAAAAAAAAAEQAAAAB
+AFYAYQByAEYAaQBsAGUASQBuAGYAbwAAAAAAJAAEAAAAVAByAGEAbgBzAGwAYQB0AGkAbwBuAAAA
+AAAAALAEegMAAAEAUwB0AHIAaQBuAGcARgBpAGwAZQBJAG4AZgBvAAAAVgMAAAEAMAAwADAAMAAw
+ADQAYgAwAAAAGgABAAEAQwBvAG0AbQBlAG4AdABzAAAAAAAAACIAAQABAEMAbwBtAHAAYQBuAHkA
+TgBhAG0AZQAAAAAAAAAAAHAAJAABAEYAaQBsAGUARABlAHMAYwByAGkAcAB0AGkAbwBuAAAAAABT
+AFQAXwAwADYAZQAwADgAZgA2ADQAOQBhAGMANQA0ADQAZAAyADkAMwBmADYAOQA2ADgANAA1ADUA
+NwA1ADMAMQBjAGYAAAA+AA8AAQBGAGkAbABlAFYAZQByAHMAaQBvAG4AAAAAADEALgAwAC4AOQAz
+ADcANAAuADQAMQA0ADMANAAAAAAAcAAoAAEASQBuAHQAZQByAG4AYQBsAE4AYQBtAGUAAABTAFQA
+XwAwADYAZQAwADgAZgA2ADQAOQBhAGMANQA0ADQAZAAyADkAMwBmADYAOQA2ADgANAA1ADUANwA1
+ADMAMQBjAGYALgBkAGwAbAAAAEgAEgABAEwAZQBnAGEAbABDAG8AcAB5AHIAaQBnAGgAdAAAAEMA
+bwBwAHkAcgBpAGcAaAB0ACAAQAAgACAAMgAwADIANQAAACoAAQABAEwAZQBnAGEAbABUAHIAYQBk
+AGUAbQBhAHIAawBzAAAAAAAAAAAAeAAoAAEATwByAGkAZwBpAG4AYQBsAEYAaQBsAGUAbgBhAG0A
+ZQAAAFMAVABfADAANgBlADAAOABmADYANAA5AGEAYwA1ADQANABkADIAOQAzAGYANgA5ADYAOAA0
+ADUANQA3ADUAMwAxAGMAZgAuAGQAbABsAAAAaAAkAAEAUAByAG8AZAB1AGMAdABOAGEAbQBlAAAA
+AABTAFQAXwAwADYAZQAwADgAZgA2ADQAOQBhAGMANQA0ADQAZAAyADkAMwBmADYAOQA2ADgANAA1
+ADUANwA1ADMAMQBjAGYAAABCAA8AAQBQAHIAbwBkAHUAYwB0AFYAZQByAHMAaQBvAG4AAAAxAC4A
+MAAuADkAMwA3ADQALgA0ADEANAAzADQAAAAAAEYADwABAEEAcwBzAGUAbQBiAGwAeQAgAFYAZQBy
+AHMAaQBvAG4AAAAxAC4AMAAuADkAMwA3ADQALgA0ADEANAAzADQAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAMAAAAIDgAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         </ScriptProject>
       </DTS:ObjectData>
     </DTS:Executable>
@@ -829,8 +2197,158 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
           Size="238.5,42"
           Id="Package\ST--Structuring JSON to CSV files"
           TopLeft="24.5,33.0416665025469" />
+        <NodeLayout
+          Size="151.5,42"
+          Id="Package\Foreach Loop Container\Data Flow Task"
+          TopLeft="37.5,31.7916656146861" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="231,129.5"
+          Size="231,172.5"
+          Id="Package\Foreach Loop Container"
+          TopLeft="288.5,137.041665985973" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
+  <TaskHost
+    design-time-name="Package\Foreach Loop Container\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="159.5,42"
+          Id="Package\Foreach Loop Container\Data Flow Task\FFS--CSV FILES"
+          TopLeft="241.833333333333,84.8333333333333" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\Foreach Loop Container\Data Flow Task\Data Conversion"
+          TopLeft="376.666666666667,191.666666666667" />
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Data Flow Task.Paths[Flat File Source Output]"
+          TopLeft="321.583333333333,126.833333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="133.583333333333,64.8333333333334"
+              Start="0,0"
+              End="133.583333333333,57.3333333333334">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.4166666666667" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.4166666666667"
+                    Point2="0,32.4166666666667"
+                    Point3="4,32.4166666666667" />
+                  <mssgle:LineSegment
+                    End="129.583333333333,32.4166666666667" />
+                  <mssgle:CubicBezierSegment
+                    Point1="129.583333333333,32.4166666666667"
+                    Point2="133.583333333333,32.4166666666667"
+                    Point3="133.583333333333,36.4166666666667" />
+                  <mssgle:LineSegment
+                    End="133.583333333333,57.3333333333334" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="173,42"
+          Id="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination"
+          TopLeft="670.833333333333,360" />
+        <NodeLayout
+          Size="154.5,42"
+          Id="Package\Foreach Loop Container\Data Flow Task\Derived Column"
+          TopLeft="496.666666666667,266.666666666667" />
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Data Flow Task.Paths[Data Conversion Output]"
+          TopLeft="455.166666666667,233.666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="118.75,32.9999999999999"
+              Start="0,0"
+              End="118.75,25.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.5"
+                    Point2="0,16.5"
+                    Point3="4,16.5" />
+                  <mssgle:LineSegment
+                    End="114.75,16.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="114.75,16.5"
+                    Point2="118.75,16.5"
+                    Point3="118.75,20.5" />
+                  <mssgle:LineSegment
+                    End="118.75,25.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Data Flow Task.Paths[Derived Column Output]"
+          TopLeft="573.916666666667,308.666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="183.416666666667,51.3333333333333"
+              Start="0,0"
+              End="183.416666666667,43.8333333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.6666666666667" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.6666666666667"
+                    Point2="0,25.6666666666667"
+                    Point3="4,25.6666666666667" />
+                  <mssgle:LineSegment
+                    End="179.416666666667,25.6666666666667" />
+                  <mssgle:CubicBezierSegment
+                    Point1="179.416666666667,25.6666666666667"
+                    Point2="183.416666666667,25.6666666666667"
+                    Point3="183.416666666667,29.6666666666667" />
+                  <mssgle:LineSegment
+                    End="183.416666666667,43.8333333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
