@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="8/31/2025 9:21:53 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="OSCA"
+  DTS:CreatorName="OSCA\oscak"
+  DTS:DTSID="{A4C4C2B3-1FB7-4637-8D58-CC13BF6EC1B9}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LocaleID="7177"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionGUID="{C90EFECE-668C-4110-8768-11795D75AC52}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables />
+</DTS:Executable>
